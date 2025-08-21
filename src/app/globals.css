@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0D2B45;
+  /* navy */
+  --foreground: #ffffff;
+}
+
+/* Mobile-only background override */
+@media (max-width: 1024px) {
+  :root {
+    --background: #0C365A;
+  }
+}
+
+@theme inline {
+  /* Core brand palette approximated from screenshot */
+  --color-navy-900: #0D2B45;
+  --color-navy-800: #113355;
+  --color-blue-500: #3353B8;
+  /* action blue for links */
+  --color-blue-600: #3156D9;
+  /* darker blue */
+  --color-brand-green: #01D167;
+  /* brand green */
+  --color-card-green: #2FCC74;
+  /* debit card surface */
+  --color-sheet: #ECF5FF;
+  /* bottom sheet */
+  --color-chip-bg: #E9F1FF;
+  /* light chip/circle */
+  --color-action-circle: #2F4DB2;
+  /* action icons circle */
+  --color-indicator: #B9C8FF;
+  /* indicator handle */
+  --color-muted: #8FA2B5;
+  --color-light-blue: #E8F2FF;
+  --color-light-mint: #EAFDF4;
+  --color-light-pink: #FFEFF5;
+  --color-surface: #FFFFFF;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Ensure proper modal positioning */
+.modal-overlay {
+  z-index: 100;
+}
+
+/* Improve card carousel responsiveness */
+@media (max-width: 640px) {
+  .card-carousel {
+    margin: 0 -1rem;
+  }
+}
+
+/* Fix button alignment issues */
+.action-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ensure proper spacing on mobile */
+@media (max-width: 768px) {
+  .mobile-spacing {
+    padding: 1rem;
+  }
+}
+
+/* Hide desktop button on mobile */
+@media (max-width: 640px) {
+  .desktop-button {
+    display: none !important;
+  }
+}
+
+/* New card button styling */
+.new-card-button {
+  background: var(--color-blue-500);
+  color: white;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.new-card-button:hover {
+  background: var(--color-blue-600);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(51, 83, 184, 0.3);
+}
+
+.new-card-button:active {
+  transform: translateY(0);
+}
+
+.new-card-button:focus {
+  outline: 2px solid rgba(51, 83, 184, 0.3);
+  outline-offset: 2px;
+}
